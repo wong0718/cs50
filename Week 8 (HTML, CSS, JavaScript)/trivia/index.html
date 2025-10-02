@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <p>What is the capital of France?</p>
+                <!-- TODO: Add multiple choice question here -->
+                 <h3>
+                    <button id="answer1-button" class = disable-button>Paris</button>
+                    <button id="answer2-button" class = disable-button>Berlin</button>
+                    <button id="answer3-button" class = disable-button>Madrid</button>
+                    <script>
+                        document.querySelector('#answer1-button').addEventListener('click',function(){
+                            document.querySelector('#answer1-button').style.backgroundColor = 'green';
+                            document.querySelector('#correct').style.display = 'block';
+                                for (let button of document.querySelectorAll('.disable-button')){
+                                    button.disabled = true;
+                                }
+                        });
+                        document.querySelector('#answer2-button').addEventListener('click',function(){
+                            document.querySelector('#answer2-button').style.backgroundColor = 'red';
+                            document.querySelector('#incorrect').style.display = 'block';
+                                for (let button of document.querySelectorAll('.disable-button')){
+                                    button.disabled = true;
+                                }
+                        })
+                        document.querySelector('#answer3-button').addEventListener('click',function(){
+                            document.querySelector('#answer3-button').style.backgroundColor =  'red';
+                            document.querySelector('#incorrect').style.display = 'block';
+                                for (let button of document.querySelectorAll('.disable-button')){
+                                    button.disabled = true;
+                                }
+                        })
+                    </script>
+                 </h3>
+                 <h4 id = "correct" style="display: none">Correct!</h4>
+                 <h4 id = "incorrect" style="display: none">Incorrect.</h4>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <p>What country has highest happiness index?</p>
+                <!-- TODO: Add free response question here -->
+                <h3>
+                    <form></form>
+                    <input autocomplete ="off" autofocus placeholder ="Answer" id = 'answer'>
+                    <button id = "check">Check Answer</button>
+                    <script>
+                        document.querySelector('#check').addEventListener('click',function(){
+                            if (document.querySelector('#answer').value == 'Finland') {
+                                document.querySelector('#true').style.display = 'block';
+                                document.querySelector('#answer').style.backgroundColor = 'green';
+                                document.querySelector('#check').disabled = true;
+                            }
+                            else{
+                                document.querySelector('#false').style.display = 'block';
+                                document.querySelector('#answer').style.backgroundColor = 'red';
+                                document.querySelector('#check').disabled = true;
+                            }
+                        })
+                    </script>
+                </h3>
+                <h4 id = "true" style="display: none">Correct!</h4>
+                <h4 id = "false" style="display: none">Incorrect.</h4>
+            </div>
+        </div>
+    </body>
+</html>
