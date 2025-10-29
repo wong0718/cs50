@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Log In
+{% endblock %}
+
+{% block main %}
+    <form method="post">
+        <div>
+            <select method="post" name ="symbol" required>
+                <option disabled selected value="" required>Symbol</option>
+                {% for stock in stocks %}
+                <option value="{{ stock['symbol'] }}">{{ stock['symbol'] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <p></p>
+        <div>
+            <input name="shares" autofocus autocomplete ="off" placeholder="Shares" type="number" min="1" required>
+        </div>
+        <p></p>
+        <button type=submit>Sell</button>
+    </form>
+
+{% endblock %}

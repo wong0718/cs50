@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Main Menu
+{% endblock %}
+
+{% block main %}
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Prices</th>
+                <th>TOTAL</th>
+                <th>Buy/Sell</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocks %}
+            <tr>
+                <td>{{ stock['symbol'] }}</td>
+                <td>{{ stock['shares'] }}</td>
+                <td>{{ stock['price'] | usd }}</td>
+                <td>{{ (stock['shares'] * stock['price']) | usd }}</td>
+                <td>
+                    <form method="post">
+                        <button name="buy" type="submit">Buy</button>
+                        <button name="sell" type="submit">Sell</button>
+                        <input name="shares" autocomplete="off" stock type="number" size="2" min="1" required>
+                        <input name="symbol" type="hidden" value="{{ stock['symbol'] }}">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot class="footer">
+            <tr>
+                <td colspan="3" class="text-end fw-bold">Cash</td>
+                <td>{{ cash | usd }}</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="text-end fw-bold">TOTAL</td>
+                <td>{{ total | usd }}</td>
+            </tr>
+        </tfoot>
+    </table>
+
+{% endblock %}
