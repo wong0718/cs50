@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Add or Take Funds
+{% endblock %}
+
+{% block main %}
+    <form method="post">
+        <div>
+            <input name="funds" autofocus autocomplete ="off" placeholder="Amount of cash" min="1" type="number" required>
+        </div>
+        <p></p>
+        <button name="add" type=submit>Add funds</button>
+        <button name="remove" type=submit>Take out funds</button>
+    </form>
+
+{% endblock %}
