@@ -1,4 +1,102 @@
-.header
+header
 {
-    text-align: center;
+    text-align:center;
 }
+
+header p
+{
+    margin:15px;
+    font-weight:bold;
+    font-size:30px;
+}
+.circle
+{
+    width: 160px;
+    height: 168px;
+    border-radius:50%;
+}
+
+nav
+{
+    text-align:center;
+
+}
+
+nav a
+{
+    margin:10px;
+}
+
+nav a:link
+{
+    color:gray;
+    text-decoration:none;
+}
+
+nav a:hover
+{
+    color:black;
+    text-decoration:underline;
+}
+
+nav a:visited
+{
+    color:black;
+    text-decoration:underline;
+}
+
+h1
+{
+    margin:auto;
+    margin-top:15px;
+    width:450px;
+    height:300px;
+    text-align:center;
+    font-size:18px;
+}
+
+.kame a:link
+{
+    color:skyblue;
+    text-decoration:none;
+}
+
+.kame a:hover
+{
+    color:black;
+    text-decoration:underline;
+}
+
+.kame a:visited
+{
+    color:black;
+    text-decoration:underline;
+}
+
+footer
+{
+    font-size:10px;
+    text-align:center;
+    position:fixed;
+    margin-left:600px;
+    margin-top:135px;
+}
+
+aside
+{
+    position:absolute;
+    top:150px;
+}
+
+.cat
+{
+    height:125px;
+    width:200px;
+}
+
+.cat :hover
+{
+    background-image: url("cat2.gif");
+}
+
+
